@@ -18,19 +18,20 @@
                 <!-- receives created colors div with class='color' style: border: 1px solid black -->
                 <!-- colors cannot be repeated -->
                 <!-- color cannot be white -->
-                <div class="color black selected" style='background: black;'></div>
+                <div id='black' class="color selected" style='background: black;'></div>
+                <div id='cyan' class="color" style='background: cyan;'></div>
                 <div id='magenta' class="color" style='background: magenta;'></div>
                 <div id='yellow' class="color" style='background: yellow;'></div>
-                <div id="cyan" class="color" style='background: cyan;'></div>
-                <div id="random-color" class='color'></div>
+                <div id='random-color' class='color' style='background: whitesmoke;'></div>
             </div>
+            <button id="clear-board">Limpar</button>
+            <button id='cyan-magenta-yellow'>CMYK</button>
             <div id='pixel-board'>
                 <!-- pixels should be white when started -->
             </div>
-            <div id="clear-board"></div>
         </main>
     </section>
-    <footer></footer>
+    <footer>Gabriel Maia &copy;</footer>
 
 </body>
 <script type='text/javascript' src='script.js'></script>
