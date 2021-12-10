@@ -81,24 +81,34 @@ p {
   height: 40px;
 }
 
-.black {
+#black {
   background: black;
 }
 
-.magenta {
+#magenta {
   background: magenta;
 }
 
-.yellow {
+#yellow {
   background: yellow;
 }
 
-.cyan {
+#cyan {
   background: cyan;
 }
 
-.random-color {
+#random-color {
   background: whitesmoke;
 }
 
-.selected {}
+#clear-board {
+  background: grey;
+  display: inline-block;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+}
+
+.pixels {
+  background: white;
+}

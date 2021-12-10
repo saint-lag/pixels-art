@@ -13,8 +13,7 @@ for (let i = 0; i < 25; i += 1) {
 }
 
 // Random Color
-const randomColors = document.querySelectorAll('.random-color');
-const randomColorsButton = randomColors[0];
+const randomColor = document.querySelector('#random-color');
 const availableColors = [
   'red',
   'maroon',
@@ -30,16 +29,39 @@ const availableColors = [
   'purple',
 ];
 
-randomColorsButton.addEventListener('click', function () {
+randomColor.addEventListener('click', function () {
   const color = parseInt(Math.random() * (availableColors.length + 1 - 0) + 0);
-  randomColorsButton.style.background = availableColors[color];
+  randomColor.style.background = availableColors[color];
 });
 
 // Selected Color
 const colorsButton = document.querySelectorAll('.color');
+let currentSelectedButton = document.querySelector('.selected');
+let selectedColor = 'black';
 
 for (let color of colorsButton) {
   color.addEventListener('click', function () {
-    color.classList.add = 'selected';
+    currentSelectedButton.classList.remove('selected');
+    color.classList.add('selected');
+    currentSelectedButton = color;
+    selectedColor = currentSelectedButton.style.background;
   });
 }
+
+// Pixel Color Change
+const pixels = document.querySelectorAll('.pixel');
+
+for (let pixel of pixels) {
+  pixel.addEventListener('click', function () {
+    pixel.style.background = selectedColor;
+  });
+}
+
+// Clear Board
+const clearBoardButton = document.querySelector('#clear-board');
+
+clearBoardButton.addEventListener('click', function () {
+  for (let pixel of pixels) {
+    pixel.style.background = 'white';
+  }
+});
