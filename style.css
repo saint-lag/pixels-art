@@ -73,7 +73,7 @@ p {
   display: block;
   width: 230px;
   height: 220px;
-
+  line-height: 0px;
 }
 
 /* colors  */
@@ -110,6 +110,50 @@ p {
   height: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+#size-buttons {
+  width: 230px;
+}
+
+#x5 {
+  background: rgba(157, 109, 246, 0.37);
+  width: 100px;
+  height: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#x10 {
+  background: rgba(157, 109, 246, 0.37);
+  width: 100px;
+  height: 30px;
+  margin-top: 15;
+  margin-bottom: 15px;
+}
+
+#x25 {
+  background: rgba(157, 109, 246, 0.37);
+  width: 100px;
+  height: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#x50 {
+  background: rgba(157, 109, 246, 0.37);
+  width: 100px;
+  height: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#size-input {
+  text-align: center;
+  background: white;
+  margin-top: 15px;
+  width: 150px;
+  height: 25px;
 }
 
 /* footer */
