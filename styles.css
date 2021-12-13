@@ -21,21 +21,6 @@
   margin: 1rem;
 }
 
-.first {
-  background-color: black;
-}
-
-.second {
-  background-color: rgb(53, 173, 32);
-}
-
-.third {
-  background-color: rgb(255, 0, 179);
-}
-
-.fourth {
-  background-color: rgb(251, 255, 0);
-}
 
 #pixel-board {
   display: flex;
@@ -52,4 +37,20 @@
   background-color: white;
   width: 40px;
   height: 40px;
+}
+
+.first {
+  background-color: black;
+}
+
+.second {
+  background-color: rgb(53, 173, 32);
+}
+
+.third {
+  background-color: rgb(255, 0, 179);
+}
+
+.fourth {
+  background-color: rgb(251, 255, 0);
 }
