@@ -16,7 +16,8 @@ pixels.forEach((pixel) => pixel.addEventListener('click', paintPixel));
 
 function clearBoard() {
   pixels.forEach((pixel) => {
-    pixel.style.backgroundColor = 'white';
+    const newPixel = pixel;
+    newPixel.style.backgroundColor = 'white';
   });
 }
 
