@@ -1,5 +1,4 @@
-// Pixel Board
-// Receives a number as input
+// Pixel Board: Default --> 5x5
 function createsPixelBoard(size) {
   const intSize = parseInt(size);
   const pixelBoard = document.querySelector('#pixel-board');
@@ -25,8 +24,8 @@ function createsPixelBoard(size) {
 
 createsPixelBoard();
 
-// Random Color
-const randomColor = document.querySelector('#random-color');
+// Random Colors
+
 const availableColors = [
   'red',
   'maroon',
@@ -42,7 +41,8 @@ const availableColors = [
   'purple',
 ];
 
-// Not First Visit
+// Default: Cyan Magenta Colors
+// Refresh: Random Colors
 
 const colorsButtons = document.querySelectorAll('.color');
 if (localStorage.getItem('sessionInitiated') === 'true') {
@@ -59,7 +59,8 @@ if (localStorage.getItem('sessionInitiated') === 'true') {
   localStorage.setItem('sessionInitiated', JSON.stringify(true));
 }
 
-// Selected Color
+// Selected Color: Defines selected color of Pallete Colors
+
 const colorsButton = document.querySelectorAll('.color');
 let currentSelectedButton = document.querySelector('.selected');
 let selectedColor = 'black';
@@ -73,7 +74,8 @@ for (let color of colorsButton) {
   });
 }
 
-// Pixel Color Change
+// Pixel Color Change: Changes color of clicked pixel
+
 const pixels = document.querySelectorAll('.pixel');
 
 for (let pixel of pixels) {
@@ -83,7 +85,8 @@ for (let pixel of pixels) {
   });
 }
 
-// Clear Board
+// Clear Board: Clears Board when click event
+
 const clearBoardButton = document.querySelector('#clear-board');
 
 clearBoardButton.addEventListener('mouseover', function (event) {
@@ -103,7 +106,7 @@ clearBoardButton.addEventListener('click', function () {
   }
 });
 
-// CMYK Button
+// Cyan Magenta Yellow Button: Turns back to Default Colors
 
 const cyanMagentaYellowButton = document.querySelector('#cyan-magenta-yellow');
 
@@ -124,8 +127,9 @@ cyanMagentaYellowButton.addEventListener('mouseout', function (event) {
   event.target.style.transform = 'scale(1.0)';
 });
 
-// Size Buttons
+// Size Buttons: User Chooses Pixel Board Size
 
+// NOT WORKING - Priority: Medium
 const sizeButtons = document.querySelectorAll('.size-button');
 
 for (let button of sizeButtons) {

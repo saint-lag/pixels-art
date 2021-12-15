@@ -89,10 +89,6 @@ p {
 }
 
 
-#random-color {
-  background: whitesmoke;
-}
-
 #clear-board {
   background: rgba(157, 109, 246, 0.37);
   display: inline-block;
