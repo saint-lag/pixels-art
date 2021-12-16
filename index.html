@@ -23,16 +23,19 @@
         <div id='magenta' class="color" style='background: magenta;'></div>
         <div id='yellow' class="color" style='background: yellow;'></div>
       </div>
-      <button id="clear-board">Limpar</button>
+      <div id="main-buttons">
+        <input id="board-size" type="number" placeholder="between 5 and 50" size="5" max='50' min='1'>
+        <button id="generate-board">VQV</button>
+        <button id="clear-board">Limpar</button>
+      </div>
       <div id='pixel-board'>
         <!-- pixels should be white when started -->
       </div>
       <div id="size-buttons">
         <button class="size-button" id="x5">5x5</button>
         <button class="size-button" id="x10">10x10</button>
-        <button class="size-button" id="x25">25x25</button>
-        <button class="size-button" id="x50">50x50</button>
-        <input id="size-input" type="text" placeholder="example: 15x15">
+        <button class="size-button" id="x15">15x15</button>
+        <button class="size-button" id="x20">20x20</button>
       </div>
       <button id='cyan-magenta-yellow'>CMYK</button>
     </main>

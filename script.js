@@ -3,6 +3,13 @@ function createsPixelBoard(size) {
   const intSize = parseInt(size);
   const pixelBoard = document.querySelector('#pixel-board');
   const pixelDiv = document.createElement('div');
+  const pixelLine = document.createElement('div');
+
+  // Pixel 
+  pixelLine.className = 'pixelLine';
+
+  // PixelDiv
+  const pixelDivs = document.querySelectorAll('.pixel');
   pixelDiv.style.width = '40px';
   pixelDiv.style.height = '40px';
   pixelDiv.style.border = '1px solid black';
@@ -11,16 +18,31 @@ function createsPixelBoard(size) {
   pixelDiv.style.background = 'white';
   pixelDiv.style.lineHeight = '0px';
 
-  if (intSize < 50 && intSize > 5) {
-    for (let i = 0; i < intSize * intSize; i += 1) {
-      pixelBoard.appendChild(pixelDiv.cloneNode(true));
+
+  while (pixelBoard.firstChild) {
+    pixelBoard.removeChild(pixelBoard.firstChild);
+  }
+
+  if (intSize <= 50 && intSize > 5) {
+    for (let i = 0; i < intSize; i += 1) {
+      pixelBoard.appendChild(pixelLine.cloneNode(true));
+    } for (let pixelLine of document.querySelectorAll('.pixelLine')) {
+      for (let i = 0; i < intSize; i += 1) {
+        pixelLine.appendChild(pixelDiv.cloneNode(true));
+      }
     }
   } else {
-    for (let i = 0; i < 25; i += 1) {
-      pixelBoard.appendChild(pixelDiv.cloneNode(true));
+    for (let i = 0; i < 5; i += 1) {
+      pixelBoard.appendChild(pixelLine.cloneNode(true));
+    } for (let pixelLine of document.querySelectorAll('.pixelLine')) {
+      for (let i = 0; i < 5; i += 1) {
+        pixelLine.appendChild(pixelDiv.cloneNode(true));
+      }
     }
   }
+
 }
+
 
 createsPixelBoard();
 
@@ -76,14 +98,16 @@ for (let color of colorsButton) {
 
 // Pixel Color Change: Changes color of clicked pixel
 
-const pixels = document.querySelectorAll('.pixel');
-
-for (let pixel of pixels) {
-  pixel.addEventListener('click', function () {
-    pixel.style.transition = '0.5s';
-    pixel.style.background = selectedColor;
-  });
+function pixelColorChanger() {
+  for (let pixel of document.querySelectorAll('.pixel')) {
+    pixel.addEventListener('click', function () {
+      pixel.style.transition = '0.5s';
+      pixel.style.background = selectedColor;
+    });
+  }
 }
+
+pixelColorChanger();
 
 // Clear Board: Clears Board when click event
 
@@ -99,12 +123,16 @@ clearBoardButton.addEventListener('mouseout', function (event) {
   event.target.style.transform = 'scale(1.0)';
 });
 
-clearBoardButton.addEventListener('click', function () {
-  for (let pixel of pixels) {
-    pixel.style.background = 'white';
-    pixel.style.transition = '1.2s';
-  }
-});
+function clearBoard() {
+  clearBoardButton.addEventListener('click', function () {
+    for (let pixel of document.querySelectorAll('.pixel')) {
+      pixel.style.background = 'white';
+      pixel.style.transition = '1.2s';
+    }
+  });
+}
+
+clearBoard();
 
 // Cyan Magenta Yellow Button: Turns back to Default Colors
 
@@ -128,8 +156,6 @@ cyanMagentaYellowButton.addEventListener('mouseout', function (event) {
 });
 
 // Size Buttons: User Chooses Pixel Board Size
-
-// NOT WORKING - Priority: Medium
 const sizeButtons = document.querySelectorAll('.size-button');
 
 for (let button of sizeButtons) {
@@ -148,7 +174,33 @@ for (let button of sizeButtons) {
       pixelBoard.removeChild(pixelBoard.firstChild);
     }
 
-    let size = parseInt(event.target.id[1]);
+    let size = event.target.id.replace(/[^0-9]/g, '');
+    console.log(size);
     createsPixelBoard(size);
+    pixelColorChanger();
+    clearBoard();
   });
 }
+
+
+// Input Size
+
+const sizeInput = document.querySelector('#board-size');
+const generateButton = document.querySelector('#generate-board');
+
+generateButton.addEventListener('click', function () {
+
+  if (sizeInput.value !== '') {
+    if (sizeInput.value > 50) {
+      clearBoard();
+      createsPixelBoard(50);
+      pixelColorChanger();
+    } else {
+      clearBoard();
+      createsPixelBoard(sizeInput.value);
+      pixelColorChanger();
+    }
+  } else {
+    alert('Board inválido!');
+  }
+});

@@ -28,7 +28,7 @@ section {
   align-content: center;
   justify-content: center;
   position: absolute;
-  top: 15%;
+  top: 8%;
 }
 
 a {
@@ -48,6 +48,10 @@ p {
   align-content: center;
   height: 100%;
 
+}
+
+#main-buttons {
+  width: 300px;
 }
 
 #title {
@@ -71,9 +75,17 @@ p {
   align-items: center;
   align-content: center;
   display: block;
-  width: 230px;
-  height: 220px;
+  width: auto;
+  height: min-content;
   line-height: 0px;
+}
+
+.pixel-line {
+  display: block;
+}
+
+.pixel {
+  display: inline-block;
 }
 
 /* colors  */
@@ -105,11 +117,31 @@ p {
   width: 100px;
   height: 30px;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
+  display: inline-block;
+}
+
+#board-size {
+  text-align: center;
+  background: white;
+  margin-top: 15px;
+  width: 150px;
+  height: 25px;
+}
+
+#generate-board {
+  background: rgba(157, 109, 246, 0.37);
+  width: 50px;
+  height: 30px;
+  margin-top: 30px;
+  display: inline-block;
 }
 
 #size-buttons {
   width: 230px;
+  display: block;
+  position: relative;
+  margin: auto;
 }
 
 #x5 {
@@ -128,7 +160,7 @@ p {
   margin-bottom: 15px;
 }
 
-#x25 {
+#x15 {
   background: rgba(157, 109, 246, 0.37);
   width: 100px;
   height: 30px;
@@ -136,7 +168,7 @@ p {
   margin-bottom: 15px;
 }
 
-#x50 {
+#x20 {
   background: rgba(157, 109, 246, 0.37);
   width: 100px;
   height: 30px;
@@ -144,13 +176,7 @@ p {
   margin-bottom: 15px;
 }
 
-#size-input {
-  text-align: center;
-  background: white;
-  margin-top: 15px;
-  width: 150px;
-  height: 25px;
-}
+
 
 /* footer */
 footer {
